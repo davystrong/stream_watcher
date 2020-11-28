@@ -15,7 +15,7 @@ void main() {
     final testFinder = find.text('test');
     expect(testFinder, findsOneWidget);
 
-    controller.close();
+    await controller.close();
   });
 
   testWidgets('StatefullWidget updates correctly', (WidgetTester tester) async {
@@ -27,7 +27,7 @@ void main() {
     final testFinder = find.text('test');
     expect(testFinder, findsOneWidget);
 
-    controller.close();
+    await controller.close();
   });
 }
 

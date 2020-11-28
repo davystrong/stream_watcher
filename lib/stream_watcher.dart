@@ -5,17 +5,17 @@ import 'package:flutter/widgets.dart';
 
 extension StreamState<T> on Stream<T> {
   //Stores all registered contexts for this stream
-  static Expando<Set<BuildContext>> _contextsExpando = Expando();
+  static final Expando<Set<BuildContext>> _contextsExpando = Expando();
   //Stores the stream subscription
-  static Expando<StreamSubscription> _streamSubs = Expando();
+  static final Expando<StreamSubscription> _streamSubs = Expando();
   //Stores the latest value of the stream
-  static Expando _dataExpando = Expando();
+  static final Expando _dataExpando = Expando();
 
   T watch(BuildContext context, [T seed]) {
     //If this state hasn't already been registered to update with this stream
     if (StreamState._contextsExpando[this] == null) {
-      StreamState._contextsExpando[this] = Set();
-      StreamState._streamSubs[this] = this.listen((event) {
+      StreamState._contextsExpando[this] = {};
+      StreamState._streamSubs[this] = listen((event) {
         if (StreamState._dataExpando[this] != event) {
           StreamState._dataExpando[this] = event;
           //Stop listening for changes if there are no states left

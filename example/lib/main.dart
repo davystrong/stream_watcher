@@ -38,6 +38,12 @@ class _HomePageState extends State<HomePage> {
   int titleIndex = 0;
 
   @override
+  void dispose() {
+    dataBloc.dispose();
+    super.dispose();
+  }
+
+  @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
