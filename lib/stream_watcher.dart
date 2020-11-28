@@ -25,6 +25,8 @@ extension StreamState<T> on Stream<T> {
           } else {
             //Otherwise call setState on each registered state
             StreamState._contextsExpando[this].removeWhere((itContext) {
+              //Calling the rebuild within remove is probably very bad practice
+              //but it's a pretty good way of only iterating once
               try {
                 //This seems mad: the only way I found to get the
                 //current element is to get the ancestor, then the child
