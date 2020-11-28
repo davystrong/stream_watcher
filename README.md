@@ -46,7 +46,7 @@ The included example app contains three configurations for accessing streams:
 
 *The last configuration was included because I thought the size of the widget my affect the performance. Certainly in this test case, the difference is insignificant.*
 
-Measuring the compute time on my Samsung Galaxy S8 with the performance overlay (UI thread), we get (aproximately - max values especially are vary a lot):
+Measuring the compute time on my Samsung Galaxy S8 with the performance overlay (UI thread), we get (aproximately - max values especially vary a lot):
 
 | Method | Average |   Max |
 | ------ | :-----: | ----: |
