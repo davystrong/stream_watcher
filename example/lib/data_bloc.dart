@@ -17,7 +17,7 @@ class DataBloc {
   }
 
   void updateStreams(Timer _) {
-    for (int i = 0; i < _streamControllers.length; i++) {
+    for (var i = 0; i < _streamControllers.length; i++) {
       _streamControllers[i].add(0.5 * (sin(ticks * (i + 1) / 400) + 1));
     }
     ticks++;
