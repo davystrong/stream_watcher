@@ -5,7 +5,7 @@ import 'dart:math';
 class DataBloc {
   final List<StreamController<double>> _streamControllers;
   final List<Stream<double>> streams = [];
-  Timer updateTimer;
+  late Timer updateTimer;
   int ticks = 0;
   final int streamCount;
 

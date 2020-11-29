@@ -11,7 +11,7 @@ extension StreamState<T> on Stream<T> {
   //Stores the latest value of the stream
   static final Expando _dataExpando = Expando();
 
-  T watch(BuildContext context, [T seed]) {
+  T? watch(BuildContext context) {
     //If this state hasn't already been registered to update with this stream
     if (StreamState._contextsExpando[this] == null) {
       StreamState._contextsExpando[this] = {};
@@ -19,12 +19,12 @@ extension StreamState<T> on Stream<T> {
         if (StreamState._dataExpando[this] != event) {
           StreamState._dataExpando[this] = event;
           //Stop listening for changes if there are no states left
-          if (StreamState._contextsExpando[this].isEmpty) {
-            StreamState._streamSubs[this].cancel();
+          if (StreamState._contextsExpando[this]!.isEmpty) {
+            StreamState._streamSubs[this]!.cancel();
             StreamState._contextsExpando[this] = null;
           } else {
             //Otherwise call setState on each registered state
-            StreamState._contextsExpando[this].removeWhere((itContext) {
+            StreamState._contextsExpando[this]!.removeWhere((itContext) {
               //Calling the rebuild within remove is probably very bad practice
               //but it's a pretty good way of only iterating once
               try {
@@ -33,7 +33,6 @@ extension StreamState<T> on Stream<T> {
                 itContext.visitAncestorElements((element) {
                   element.visitChildElements((element) {
                     element.markNeedsBuild();
-                    return false;
                   });
                   return false;
                 });
@@ -46,8 +45,9 @@ extension StreamState<T> on Stream<T> {
         }
       });
     }
-    StreamState._contextsExpando[this].add(context);
+
+    StreamState._contextsExpando[this]!.add(context);
     //Return the latest value of the stream
-    return StreamState._dataExpando[this] ?? seed;
+    return StreamState._dataExpando[this] as T?;
   }
 }

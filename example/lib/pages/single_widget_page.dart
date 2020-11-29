@@ -4,8 +4,8 @@ import 'package:stream_watcher/stream_watcher.dart';
 
 class SingleWidgetPage extends StatelessWidget {
   const SingleWidgetPage({
-    Key key,
-    this.dataBloc,
+    Key? key,
+    required this.dataBloc,
   }) : super(key: key);
   final DataBloc dataBloc;
 
@@ -18,7 +18,7 @@ class SingleWidgetPage extends StatelessWidget {
         dataBloc.streamCount,
         (index) => GridTile(
           child: CircularProgressIndicator(
-            value: dataBloc.streams[index].watch(context, 0),
+            value: dataBloc.streams[index].watch(context) ?? 0,
           ),
         ),
       ),

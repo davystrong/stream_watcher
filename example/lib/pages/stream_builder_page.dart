@@ -3,8 +3,8 @@ import 'package:example/data_bloc.dart';
 
 class StreamBuilderPage extends StatelessWidget {
   const StreamBuilderPage({
-    Key key,
-    this.dataBloc,
+    Key? key,
+    required this.dataBloc,
   }) : super(key: key);
   final DataBloc dataBloc;
 
