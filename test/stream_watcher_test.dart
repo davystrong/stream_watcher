@@ -34,7 +34,7 @@ void main() {
 class TestStatelessWidget extends StatelessWidget {
   const TestStatelessWidget({
     Key key,
-    this.stream,
+    @required this.stream,
   }) : super(key: key);
 
   final Stream<String> stream;
@@ -52,7 +52,7 @@ class TestStatelessWidget extends StatelessWidget {
 class TestStatefulWidget extends StatefulWidget {
   const TestStatefulWidget({
     Key key,
-    this.stream,
+    @required this.stream,
   }) : super(key: key);
 
   final Stream<String> stream;

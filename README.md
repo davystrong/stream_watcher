@@ -53,3 +53,7 @@ Measuring the compute time on my Samsung Galaxy S8 with the performance overlay 
 | 1      | 4.8 ms  | 15 ms |
 | 2      | 6.0 ms  | 15 ms |
 | 3      | 6.2 ms  | 16 ms |
+
+## Notes
+
+The implementation of the `.watch(...)` function at one point catches a `FlutterError`. This isn't specifically an error but it probably is considered bad practice as errors should be fixed rather than caught. In this case, it was the only way I could find to discover if an element was still mounted.
