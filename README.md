@@ -23,7 +23,7 @@ class _ExampleState extends State<Example> {
   Widget build(BuildContext context) {
     return Center(
       child: CircularProgressIndicator(
-        value: progressStream.watch(context, 0),
+        value: progressStream.watch(context) ?? 0,
       ),
     );
   }
