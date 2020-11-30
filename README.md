@@ -4,7 +4,7 @@ Inspired by Provider's brilliant `watch` extension to `BuildContext`, this is an
 
 ## Usage
 
-Import the package, then call `.watch(context)` or `.watch(context, initialValue)` on a `Stream`.
+Import the package, then call `.watch(context)` on a `Stream`.
 
 ```
 import 'package:stream_watcher/stream_watcher.dart';
@@ -57,3 +57,5 @@ Measuring the compute time on my Samsung Galaxy S8 with the performance overlay 
 ## Notes
 
 The implementation of the `.watch(...)` function at one point catches a `FlutterError`. This isn't specifically an error but it probably is considered bad practice as errors should be fixed rather than caught. In this case, it was the only way I could find to discover if an element was still mounted.
+
+Much like `StreamBuilder`, `.watch(...)` initially returns a value of `null`. I had initially included an optional `initialValue` parameter, which set the value at the start, however this would only work if the stream were only watched once in a `BuildContext`, therefore it was removed. The best way to deal with this null value is the null aware operator `someStream.watch(context) ?? backupValue`.
