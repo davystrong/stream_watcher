@@ -1,7 +1,6 @@
 name: stream_watcher
 description: Extension for watching streams.
-version: 0.0.1
-author: David Armstrong
+version: 0.1.0-nullsafety.1
 homepage: https://github.com/davystrong
 
 environment:
