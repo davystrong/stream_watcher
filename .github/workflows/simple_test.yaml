@@ -1,0 +1,20 @@
+name: Simple testing
+
+on:
+  push
+
+jobs:
+  build:
+    timeout-minutes: 5
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@master
+      - uses: actions/setup-java@master
+        with:
+          java-version: "12.x"
+      - uses: subosito/flutter-action@master
+        with:
+          channel: "stable"
+      - run: flutter pub get
+      - run: flutter test
