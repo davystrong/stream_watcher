@@ -47,7 +47,7 @@ void main() {
       controller.add('test');
       await tester.pump();
       final testFinder = find.text('test');
-      expect(testFinder, findsNWidgets(length));
+      expect(testFinder, findsNWidgets(length + 2));
 
       await controller.close();
     });
