@@ -1,4 +1,4 @@
-name: Simple testing
+name: basic-tests
 
 on:
   push
