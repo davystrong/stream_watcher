@@ -4,7 +4,7 @@ on:
   push
 
 jobs:
-  build:
+  test:
     timeout-minutes: 5
     runs-on: ubuntu-latest
 
@@ -15,6 +15,6 @@ jobs:
           java-version: "12.x"
       - uses: subosito/flutter-action@master
         with:
-          channel: "stable"
+          channel: "dev"
       - run: flutter pub get
       - run: flutter test
