@@ -3,14 +3,20 @@ library stream_watcher;
 import 'dart:async';
 import 'package:flutter/widgets.dart';
 
+/// An extension for Stream that allows calling `.watch(context)` to
+/// automatically update the value in the given widget
 extension StreamState<T> on Stream<T> {
-  //Stores all registered contexts for this stream
+  /// Stores all registered contexts for this stream
   static final Expando<Set<BuildContext>> _contextsExpando = Expando();
-  //Stores the stream subscription
+
+  /// Stores the stream subscription
   static final Expando<StreamSubscription> _streamSubs = Expando();
-  //Stores the latest value of the stream
+
+  /// Stores the latest value of the stream
   static final Expando _dataExpando = Expando();
 
+  /// This function automatically updates the enclosing widget when a new
+  /// element is added to the stream
   T? watch(BuildContext context) {
     //If this state hasn't already been registered to update with this stream
     if (StreamState._contextsExpando[this] == null) {
