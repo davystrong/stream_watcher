@@ -1,6 +1,6 @@
 name: stream_watcher
 description: An extension for watching Dart streams, allowing a stream to be "converted" to a value by simply calling `.watch(context)`.
-version: 0.1.1-nullsafety.1
+version: 0.1.2-nullsafety.1
 homepage: https://github.com/davystrong
 
 environment:

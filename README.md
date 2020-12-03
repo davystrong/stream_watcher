@@ -1,6 +1,6 @@
 # Stream watcher
 
-[![Pub](https://img.shields.io/pub/v/progress_indicator_button.svg)](https://pub.dev/packages/stream_watcher) [![basic-tests](https://img.shields.io/github/workflow/status/davystrong/stream_watcher/basic-tests?label=basic-tests&logo=github)](https://github.com/davystrong/stream_watcher/actions) [![Donate](https://img.shields.io/badge/Donate-PayPal-green.svg)](https://paypal.me/davystrong)
+[![Pub](https://img.shields.io/pub/v/stream_watcher?include_prereleases)](https://pub.dev/packages/stream_watcher) [![basic-tests](https://img.shields.io/github/workflow/status/davystrong/stream_watcher/basic-tests?label=basic-tests&logo=github)](https://github.com/davystrong/stream_watcher/actions) [![Donate](https://img.shields.io/badge/Donate-PayPal-green.svg)](https://paypal.me/davystrong)
 
 Inspired by [Provider's](https://pub.dev/packages/provider) brilliant `watch` extension to `BuildContext`, this is an extension to `Stream` that allows watching the value of stream and automatically updates the parent widget when it changes.
 
