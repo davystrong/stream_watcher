@@ -32,11 +32,6 @@ class _ExampleState extends State<Example> {
 }
 ```
 
-## Limitations
-
-When using the `.watch(...)` method, you must take care that the `Stream` you are watching doesn't get recreated when the rebuild is triggered. For example, if your stream getter implicitly calls `someStream.map(...)`, a new stream will be created, initially with a value of null, leaving you in an endless loop.
-While I think this is also the case for the normal `StreamBuilder`, it isn't as obvious because `StreamBuilder` rebuilds itself, rather than the parent widget, so this issue would happen less frequently.
-
 ## Performance
 
 Obviously, the big question about this is performance. Unfortunately, it isn't as good as a normal `StreamBuilder`, however the performance hit isn't too bad. This means that, while you probably shouldn't use this when you're struggling with performance, it's perfectly acceptable for most situations. The gain in ease and simplicity of coding is also a plus, using `.watch(...)` is a very nice way of accessing a stream's value.
@@ -55,6 +50,11 @@ Measuring the compute time on my Samsung Galaxy S8 with the performance overlay 
 | 1      | 4.8 ms  | 15 ms |
 | 2      | 6.0 ms  | 15 ms |
 | 3      | 6.2 ms  | 16 ms |
+
+## Limitations
+
+When using the `.watch(...)` method, you must take care that the `Stream` you are watching doesn't get recreated when the rebuild is triggered. For example, if your stream getter implicitly calls `someStream.map(...)`, a new stream will be created, initially with a value of null, leaving you in an endless loop.
+While I think this is also the case for the normal `StreamBuilder`, it isn't as obvious because `StreamBuilder` rebuilds itself, rather than the parent widget, so this issue would happen less frequently.
 
 ## Notes
 
