@@ -34,7 +34,7 @@ class _ExampleState extends State<Example> {
 
 ## Performance
 
-Obviously, the big question about this is performance. Unfortunately, it isn't as good as a normal `StreamBuilder`, however the performance hit isn't too bad. This means that, while you probably shouldn't use this when you're struggling with performance, it's perfectly acceptable for most situations. The gain in ease and simplicity of coding is also a plus, using `.watch(...)` is a very nice way of accessing a stream's value.
+Obviously, the big question about this is performance. While not quite as good as a normal `StreamBuilder`, the performance hit isn't too bad. This means that, while you probably shouldn't use this when you're struggling with performance, it's perfectly acceptable for most situations. The gain in ease and simplicity of coding is also a plus, using `.watch(...)` is a very nice way of accessing a stream's value.
 
 The included example app contains three configurations for accessing streams:
 1) `StreamBuiler`
